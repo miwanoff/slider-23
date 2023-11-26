@@ -21,6 +21,20 @@
             transition: all 0.5s;
             opacity: 1;
         }
+
+        .mini {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+        }
+
+        .fade {
+            opacity: 0;
+        }
+
+        .go {
+            left: 520px;
+        }
     </style>
 </head>
 
@@ -28,8 +42,19 @@
     <div id="wrap">
         <img id="slider" src="images/landscape-photography-tips-yosemite-valley-feature.webp">
     </div>
+    <img src="images/landscape-photography-tips-yosemite-valley-feature.webp" alt="" class="mini"><img
+        src="images/lanscape.jfif" alt="" class="mini"><img src="images/UK_advice-gardening-growing-poppies_header.jpg"
+        alt="" class="mini"><br>
     <button id="prev">&lt;</button>
     <button id="next">&gt;</button><br>
+
+    <button id="start">start</button><br>
+    <button id="stop">stop</button><br>
+    <form action="" name="effects">
+        <input type="radio" name="effect" value="none">
+        <input type="radio" name="effect" value="go">
+        <input type="radio" name="effect" value="fade">
+    </form>
     <script src="script.js" defer></script>
 </body>
 
