@@ -12,6 +12,14 @@ const startButton = document.getElementById("start");
 const stopButton = document.getElementById("stop");
 const miniatures = document.getElementsByClassName("mini");
 
+const effectButton = document.getElementById("get_effect");
+
+const ef = document.forms.effects;
+
+let effect = "none";
+
+console.log(ef);
+
 let timer;
 
 function next() {
@@ -35,6 +43,26 @@ function start() {
 
 stopButton.addEventListener("click", stop);
 
+effectButton.addEventListener("click", getEffect);
+
+function getEffect() {
+  // removeEffect()
+  for (let i = 0; i < ef.length; i++) {
+    if (ef[i].checked) {
+      effect = ef[i].value;
+    }
+  }
+}
+
+function addEffect() {
+  //removeEffect()
+  slider.classList.add(effect);
+}
+
+function removeEffect() {
+  slider.classList.remove(effect);
+}
+
 function stop() {
   clearInterval(timer);
 }
@@ -46,4 +74,14 @@ for (let i = 0; i < miniatures.length; i++) {
 function showSlide(event) {
   let imageMini = event.target;
   // replace src
+}
+
+//-----------------Without button----------------
+for (let i = 0; i < ef.length; i++) {
+  ef[i].addEventListener("change", changeEffect);
+}
+
+function changeEffect(event) {
+  removeEffect();
+  effect = event.target.value;
 }
